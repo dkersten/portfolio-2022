@@ -1,0 +1,61 @@
+.carousel-cell {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  max-width: 425px;
+
+  &:nth-of-type(1) {
+    padding-left: 0;
+  }
+
+  img {
+    width: 425px;
+    height: 320px;
+    box-shadow: $box-shadow-md;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  h3 {
+    max-width: 425px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+
+    a {
+      text-decoration: none;
+      color: $color-font-primary;
+    }
+  }
+
+  p {
+    max-width: 425px;
+    width: 100%;
+    color: $color-font-secondary;
+
+    a,
+    a:hover,
+    a:focus,
+    a:visited {
+      color: $color-font-secondary;
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .carousel-cell {
+    max-width: 325px;
+
+    img {
+      width: 325px;
+      height: 245px;
+    }
+
+    h3,
+    p {
+      max-width: 325px;
+    }
+  }
+}

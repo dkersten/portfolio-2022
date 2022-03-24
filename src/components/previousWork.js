@@ -1,0 +1,45 @@
+import * as React from "react"
+
+const PreviousWork = () => {
+    return (
+        <section id="previous-work" class="previous-work">
+            <div class="page-width">
+                {/* <svg id="previous-work-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" class="animate-svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 43.1 85.9" style="enable-background:new 0 0 43.1 85.9;" xml:space="preserve">
+                    <path stroke-linecap="round" stroke-linejoin="round" class="svg-path animated draw"
+                    d="M 45 19 C 30 17, 15 10, -30 40"
+                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" class="svg-path animated draw tail1"
+                    d="M -30 40 -26 30"     
+                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" class="svg-path animated draw tail2"
+                    d="M -30 40 -22 44"     
+                    />
+                </svg> */}
+                <h2>Previous Work</h2>
+            </div>
+            <div class="full-width">
+                <div class="page-width">
+                <div data-scroll="in" class="prev-work-carousel group flickity-enabled is-draggable" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "touchVerticalScroll": false }' tabindex="0">
+                    <div class="carousel-cell">
+                        <img src="http://danielkersten.io/assets/golf-scorecard.jpg" alt="Screenshot of the EZ Golf Scorecard UI" />
+                        <h3><a target="_blank" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
+                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank">github readme</a>.</p>
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="http://danielkersten.io/assets/golf-scorecard.jpg" alt="Screenshot of the EZ Golf Scorecard UI" />
+                        <h3><a target="_blank" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
+                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank">github readme</a>.</p>
+                    </div>
+                    <div class="carousel-cell">
+                        <img src="http://danielkersten.io/assets/golf-scorecard.jpg" alt="Screenshot of the EZ Golf Scorecard UI" />
+                        <h3><a target="_blank" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
+                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank">github readme</a>.</p>
+                    </div>
+                 </div>   
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default PreviousWork

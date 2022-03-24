@@ -1,0 +1,80 @@
+.previous-work {
+  .page-width {
+    position: relative;
+  }
+
+  svg.animate-svg {
+    position: absolute;
+    left: 135px;
+    top: -130px;
+    width: 350px;
+    height: 250px;
+    margin-left: 100px;
+    transform: rotate(-8deg);
+    stroke-width: 1.75;
+    stroke: $color-green-primary;
+    fill: none;
+
+    @media only screen and (max-width: 599px) {
+      top: -200px;
+      left: -60px;
+      transform: rotate(-25deg);
+    }
+
+    @media only screen and (max-width: 475px) {
+      height: 150px;
+      width: 210px;
+      top: -120px;
+      stroke-width: 2.75;
+    }
+  }
+
+  h2 {
+    color: $color-font-primary;
+    margin-bottom: $vertical-spacing-xs;
+    font-weight: 700;
+  }
+}
+
+.flickity-prev-next-button {
+  opacity: 1;
+  color: $color-font-primary;
+
+  &.previous {
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: -48px;
+    right: 68px;
+    left: auto;
+  }
+
+  &.next {
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: -48px;
+    right: 28px;
+    left: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .previous-work h2 {
+    margin-bottom: 5rem;
+  }
+
+  .flickity-prev-next-button {
+    &.previous {
+      left: 50%;
+      right: auto;
+      top: -58px;
+      transform: translateX(-40px);
+    }
+
+    &.next {
+      left: 50%;
+      right: auto;
+      top: -58px;
+      transform: translateX(0px);
+    }
+  }
+}
