@@ -15,13 +15,13 @@ const Experience = () => {
         <section id="experience" className="full-width experience">
             <div className="page-width">
                     <svg id="experience-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" className="animate-svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 43.1 85.9">
-                        <path stroke-linecap="round" stroke-linejoin="round" className="svg-path animated draw"
+                        <path strokeLinecap="round" strokeLinejoin="round" className="svg-path animated draw"
                         d="M 45 19 C 30 17, 15 10, -30 40"
                         />
-                        <path stroke-linecap="round" stroke-linejoin="round" className="svg-path animated draw tail1"
+                        <path strokeLinecap="round" strokeLinejoin="round" className="svg-path animated draw tail1"
                         d="M -30 40 -26 30"     
                         />
-                        <path stroke-linecap="round" stroke-linejoin="round" className="svg-path animated draw tail2"
+                        <path strokeLinecap="round" strokeLinejoin="round" className="svg-path animated draw tail2"
                         d="M -30 40 -22 44"     
                         />
                     </svg>
