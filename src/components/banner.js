@@ -1,4 +1,5 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Banner = () => {
     return (
@@ -9,10 +10,26 @@ const Banner = () => {
                     <p>
                         Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development.
                     </p>
-                    <img className="icon1" src="../images/brackets-blue-primary.png" alt="" />
-                    <img className="icon2" src="../images/brackets-green-primary.png" alt="" />
-                    <img className="icon3" src="../images/tags-blue-primary.png" alt="" />
-                    <img className="icon4" src="../images/tags-green-primary.png" alt="" />
+                    <StaticImage 
+                        src="../images/brackets-blue-primary.png"
+                        alt=""
+                        className="icon1"
+                    />
+                    <StaticImage 
+                        src="../images/brackets-green-primary.png"
+                        alt=""
+                        className="icon2"
+                    />
+                    <StaticImage 
+                        src="../images/tags-blue-primary.png"
+                        alt=""
+                        className="icon3"
+                    />
+                    <StaticImage 
+                        src="../images/tags-green-primary.png"
+                        alt=""
+                        className="icon4"
+                    />
                 </div>
             </div>
         </section>

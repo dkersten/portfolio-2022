@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "font-awesome": "^4.7.0",
     "gatsby": "^4.9.2",
     "gatsby-plugin-gatsby-cloud": "^4.9.0",
     "gatsby-plugin-image": "^2.9.0",
@@ -20,8 +21,10 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-flickity-component": "^3.6.2",
     "react-helmet": "^6.1.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
