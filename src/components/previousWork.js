@@ -1,7 +1,10 @@
 import React, { useEffect } from "react"
 import Vivus from "vivus"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 import Flickity from "react-flickity-component"
+import { useStaticQuery, graphql } from "gatsby"
+
+import PreviousWorkCard from "./previousWorkCard"
 
 const PreviousWork = () => {
     useEffect(() => {
@@ -19,8 +22,31 @@ const PreviousWork = () => {
         contain: true,
         pageDots: false,
         touchVerticalScroll: false
-      }
+    }
 
+    const data = useStaticQuery(graphql`
+        query PreviousProjectsQuery {
+            allContentfulProject(sort: {order: DESC, fields: updatedAt}) {
+                edges {
+                  node {
+                    id
+                    projectName
+                    projectUrl
+                    resourceImageDescription
+                    projectScreenshot {
+                      gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+                    }
+                    projectDescription {
+                      projectDescription
+                    }
+                  }
+                }
+              }
+        }
+    `)
+
+    const projectsArr = data.allContentfulProject.edges
+    console.log(projectsArr)
     return (
         <section id="previous-work" className="previous-work">
             <div className="page-width">
@@ -44,38 +70,14 @@ const PreviousWork = () => {
                     elementType={"div"}
                     options={flickityOptions}
                 >
-                    <div className="carousel-cell">
-                        <StaticImage 
-                            src="../images/dan.jpeg"
-                            alt="Screenshot of the EZ Golf Scorecard UI"
-                        />
-                        <h3><a target="_blank" rel="noreferrer" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
-                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank" rel="noreferrer">github readme</a>.</p>
-                    </div>
-                    <div className="carousel-cell">
-                        <StaticImage 
-                            src="../images/dan.jpeg"
-                            alt="Screenshot of the EZ Golf Scorecard UI"
-                        />
-                        <h3><a target="_blank" rel="noreferrer" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
-                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank" rel="noreferrer">github readme</a>.</p>
-                    </div>
-                    <div className="carousel-cell">
-                        <StaticImage 
-                            src="../images/dan.jpeg"
-                            alt="Screenshot of the EZ Golf Scorecard UI"
-                        />
-                        <h3><a target="_blank" rel="noreferrer" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
-                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank" rel="noreferrer">github readme</a>.</p>
-                    </div>
-                    <div className="carousel-cell">
-                        <StaticImage 
-                            src="../images/dan.jpeg"
-                            alt="Screenshot of the EZ Golf Scorecard UI"
-                        />
-                        <h3><a target="_blank" rel="noreferrer" href="https://ez-golf-scorecard.herokuapp.com/" aria-label="Visit EZ Golf Scorecard app (Opens in new tab)">EZ Golf Scorecard</a></h3>
-                        <p>A full stack, mobile focused golf scorecard app. The front end is built with React and React Router and the back end is built with Ruby on Rails with a Postgresql database. User authentication and authorization is provided by Auth0 and the app is hosted on Heroku. If you don't want to create an account you can find a demo account credentials in the <a aria-label="The github repository for the EZ Golf Scorecard project w/ demo account credentials" href="https://github.com/dkersten/golf-scorecard-frontend-v2" target="_blank" rel="noreferrer">github readme</a>.</p>
-                    </div>
+                    {
+                        projectsArr.map(project =>
+                            <PreviousWorkCard
+                                key={project.node.id}
+                                {...project.node}
+                            />
+                        )
+                    }
                 </Flickity>
                 </div>
             </div>
