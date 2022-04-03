@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PreviousWorkCard = (props) => {
     // console.log(props)

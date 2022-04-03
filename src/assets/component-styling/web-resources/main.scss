@@ -1,0 +1,87 @@
+.dev-resources {
+  main {
+    margin-top: 4rem;
+
+    .resource-section {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+
+      &:nth-of-type(2n) {
+        background: #fbfbfd;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 779px) {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      h2 {
+        margin-bottom: 2rem;
+        color: #1d1d1f;
+        font-size: 36px;
+
+        @media only screen and (max-width: 779px) {
+          text-align: center;
+        }
+      }
+
+      .resource-card {
+        margin: 0 1.5rem 3rem 0;
+        width: 350px;
+        position: relative;
+
+        @media only screen and (max-width: 779px) {
+          text-align: center;
+          margin: 0 auto 2rem;
+        }
+      }
+
+      .initials-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 20px;
+
+        @media only screen and (max-width: 779px) {
+          justify-content: center;
+        }
+      }
+
+      .initials-container span {
+        font-size: 30px;
+        font-weight: 700;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(#4b90e2, #5beccb);
+        color: #fff;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .resource-card h3 a {
+        text-decoration: none;
+        color: #2375d7;
+      }
+
+      .resource-card p {
+        font-size: 14px;
+        color: rgba(26, 27, 28, 0.6);
+        line-height: 1.5;
+      }
+    }
+  }
+}

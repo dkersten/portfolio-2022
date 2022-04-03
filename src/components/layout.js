@@ -18,9 +18,6 @@ import PreviousWork from "./previousWork"
 import Resources from "./resources"
 import Contact from "./contact"
 
-// assets
-import "../assets/app.scss"
-
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
@@ -33,8 +30,9 @@ const Layout = ({ children }) => {
   // `)
 
   return (
-    <>
-      <Nav />
+    <div>
+    {children}
+      {/* <Nav />
         <main className="main-content">
           <Banner />
           <About />
@@ -51,8 +49,8 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-    </>
+        </footer> */}
+    </div>
   )
 }
 

@@ -46,7 +46,7 @@ const PreviousWork = () => {
     `)
 
     const projectsArr = data.allContentfulProject.edges
-    console.log(projectsArr)
+    
     return (
         <section id="previous-work" className="previous-work">
             <div className="page-width">

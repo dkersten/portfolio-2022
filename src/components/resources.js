@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React, { useEffect } from "react"
 import Vivus from "vivus"
 
@@ -18,7 +19,8 @@ const Resources = () => {
                     <h2>Resources</h2>
                     <p>Various tools, resources, articles, and documentation I've come across while developing that I've found helpful and/or incorporated into my workflow.</p>
                     <div className="btn-container">
-                        <a target="_blank" rel="noreferrer" href="https://danielkerstenioresources.gatsbyjs.io/">See Resources</a>
+                        {/* <a target="_blank" rel="noreferrer" href="https://danielkerstenioresources.gatsbyjs.io/">See Resources</a> */}
+                        <Link to="/web-dev-resources">See Resources</Link>
                     </div>
                 </div>
             </div>

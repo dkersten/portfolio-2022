@@ -1,0 +1,14 @@
+.dev-resources {
+  header {
+    text-align: center;
+    background: rgba(75, 144, 226, 1);
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+    padding: 4rem 0;
+
+    .page-width {
+      max-width: 800px;
+    }
+  }
+}
