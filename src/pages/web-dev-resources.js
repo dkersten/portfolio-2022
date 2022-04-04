@@ -53,7 +53,7 @@ const WebDevResources = () => {
                     }
                 }
             }
-            fontResources: allContentfulDevResources(filter: {resourceCategory:{eq: "fonts"}}) {
+            fontsResources: allContentfulDevResources(filter: {resourceCategory:{eq: "fonts"}}) {
                 edges {
                     node {
                         resourceName
@@ -67,7 +67,7 @@ const WebDevResources = () => {
                     }
                 }
             }
-            imageResources: allContentfulDevResources(filter: {resourceCategory:{eq: "img"}}) {
+            imagesResources: allContentfulDevResources(filter: {resourceCategory:{eq: "img"}}) {
                 edges {
                     node {
                         resourceName
@@ -139,16 +139,38 @@ const WebDevResources = () => {
             }
         }
     `)
-    console.log(data)
-    const accessibilityData = data.accessibilityResources.edges
-    const colorData = data.colorResources.edges
-    const designData = data.designResources.edges
-    const fontsData = data.fontResources.edges
-    const imagesData = data.imageResources.edges
-    const inspirationData = data.inspirationResources.edges
-    const learningData = data.learningResources.edges
-    const miscellaneousData = data.miscellaneousResources.edges
-    const toolingData = data.toolingResources.edges
+    
+    const sectionJSX = () => {
+        const ElementArr = []
+        for (const [key, value] of Object.entries(data)) {
+
+            // remove "Resources" from query name for Section Title
+            const sectionName = key.replace('Resources', '')
+
+            // capitalize Section Title's first character
+            const capitalizedSectionName = sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
+
+            ElementArr.push(
+                <section id={sectionName} className="resource-section">
+                    <div className="page-width">
+                        <h2>{capitalizedSectionName}</h2>
+                        <div className="flex-container">
+                            {
+                                value.edges.map(resource =>
+                                    <ResourceCard
+                                        key={resource.node.id}
+                                        {...resource.node}
+                                    />
+                                )
+                            }
+                        </div>
+                    </div>
+                </section>
+            )
+        }
+
+        return ElementArr
+    }
 
     return(
         <Layout>
@@ -160,141 +182,7 @@ const WebDevResources = () => {
                     </div>
                 </header>
                 <main>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Accessibility</h2>
-                            <div className="flex-container">
-                                {
-                                    accessibilityData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Color</h2>
-                            <div className="flex-container">
-                                {
-                                    colorData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Design</h2>
-                            <div className="flex-container">
-                                {
-                                    designData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Fonts</h2>
-                            <div className="flex-container">
-                                {
-                                    fontsData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Images</h2>
-                            <div className="flex-container">
-                                {
-                                    imagesData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Inspiration</h2>
-                            <div className="flex-container">
-                                {
-                                    inspirationData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Learning</h2>
-                            <div className="flex-container">
-                                {
-                                    learningData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Miscellaneous</h2>
-                            <div className="flex-container">
-                                {
-                                    miscellaneousData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
-                    <section className="resource-section">
-                        <div className="page-width">
-                            <h2>Tooling</h2>
-                            <div className="flex-container">
-                                {
-                                    toolingData.map(resource =>
-                                        <ResourceCard
-                                            key={resource.node.id}
-                                            {...resource.node}
-                                        />
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </section>
+                    { sectionJSX() }
                 </main>
             </div>
         </Layout>
