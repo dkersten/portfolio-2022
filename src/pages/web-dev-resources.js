@@ -14,126 +14,63 @@ const WebDevResources = () => {
             accessibilityResources: allContentfulDevResources(filter: {resourceCategory:{eq: "accessibility"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             colorResources: allContentfulDevResources(filter: {resourceCategory:{eq: "color"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             designResources: allContentfulDevResources(filter: {resourceCategory:{eq: "design"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             fontsResources: allContentfulDevResources(filter: {resourceCategory:{eq: "fonts"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             imagesResources: allContentfulDevResources(filter: {resourceCategory:{eq: "img"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             inspirationResources: allContentfulDevResources(filter: {resourceCategory:{eq: "inspiration"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             learningResources: allContentfulDevResources(filter: {resourceCategory:{eq: "learning"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             miscellaneousResources: allContentfulDevResources(filter: {resourceCategory:{eq: "misc"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
             toolingResources: allContentfulDevResources(filter: {resourceCategory:{eq: "tooling"}}) {
                 edges {
                     node {
-                        resourceName
-                        resourceUrl
-                        resourceAbbreviation
-                        resourceCategory
-                        resourceDescription {
-                            resourceDescription
-                        }
-                        id
+                        ...webResourcesFragment
                     }
                 }
             }
@@ -151,7 +88,7 @@ const WebDevResources = () => {
             const capitalizedSectionName = sectionName.charAt(0).toUpperCase() + sectionName.slice(1)
 
             ElementArr.push(
-                <section id={sectionName} className="resource-section">
+                <section key={sectionName} id={sectionName} className="resource-section">
                     <div className="page-width">
                         <h2>{capitalizedSectionName}</h2>
                         <div className="flex-container">

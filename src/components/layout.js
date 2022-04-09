@@ -10,13 +10,13 @@ import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 
 // components
-import Nav from "./nav"
-import Banner from "./banner"
-import About from "./about"
-import Experience from "./experience"
-import PreviousWork from "./previousWork"
-import Resources from "./resources"
-import Contact from "./contact"
+// import Nav from "./nav"
+// import Banner from "./banner"
+// import About from "./about"
+// import Experience from "./experience"
+// import PreviousWork from "./previousWork"
+// import Resources from "./resources"
+// import Contact from "./contact"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`

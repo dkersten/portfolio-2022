@@ -7,6 +7,7 @@ const ResourceCard = (props) => {
         resourceAbbreviation: resourceAbbreviation,
         resourceDescription: description
     } = props
+
     return (
         <div className="resource-card">
             <div className="initials-container">
