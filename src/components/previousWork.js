@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import Vivus from "vivus"
-// import { StaticImage } from "gatsby-plugin-image"
 import Flickity from "react-flickity-component"
 import { useStaticQuery, graphql } from "gatsby"
 

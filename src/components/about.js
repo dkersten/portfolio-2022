@@ -19,7 +19,6 @@ const About = () => {
                         alt="Dan Kersten on the Pier in Santa Monica, California"
                         formats={["auto", "webp", "avif"]}
                     />
-                    {/* <img src="../images/dan.jpeg" alt="Dan Kersten on the Pier in Santa Monica, California" /> */}
                 </div>
             </div>
         </section>

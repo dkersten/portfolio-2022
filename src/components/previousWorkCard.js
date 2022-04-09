@@ -2,8 +2,6 @@ import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PreviousWorkCard = (props) => {
-    // console.log(props)
-    // console.log("hello from previous work card")
     let {
         projectName: name, 
         projectUrl: url, 
