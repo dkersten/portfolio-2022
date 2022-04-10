@@ -1,3 +1,10 @@
+# To Do
+- Add inspiration page and styling
+- Upload updated resume
+- Fix PDF download link
+- Update email
+- Add freelance page
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
