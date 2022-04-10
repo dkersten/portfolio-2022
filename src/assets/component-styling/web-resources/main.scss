@@ -1,86 +1,260 @@
+@import "./config.scss";
+
 .dev-resources {
   main {
-    margin-top: 4rem;
-
+    padding-bottom: $vert-spacing-xl;
+    .page-width {
+      @include contentWidthNormal;
+    }
     .resource-section {
-      padding-top: 2rem;
-      padding-bottom: 3rem;
+      padding: $vert-spacing-xl 0;
 
-      &:nth-of-type(2n) {
-        background: #fbfbfd;
+      @media only screen and (max-width: 549px) {
+        padding: $vert-spacing-md;
+      }
+
+      h2 {
+        color: $color-grey-dark;
+        font-size: 1.5rem;
+        margin-bottom: $vert-spacing-lg;
       }
 
       .flex-container {
         display: flex;
         flex-wrap: wrap;
+        row-gap: 3.5rem;
+        column-gap: 1.5rem;
 
-        @media only screen and (max-width: 779px) {
-          flex-direction: column;
+        @media only screen and (max-width: 899px) {
+          column-gap: 1.5rem;
+        }
+
+        @media only screen and (max-width: 549px) {
+          column-gap: 0;
+          row-gap: $vert-spacing-md;
           justify-content: center;
         }
+
+        a {
+          flex-basis: calc(33.333% - 1rem);
+          text-decoration: none;
+          display: block;
+
+          @media only screen and (max-width: 899px) {
+            flex-basis: calc(50% - 0.75rem);
+          }
+
+          @media only screen and (max-width: 549px) {
+            flex-basis: 100%;
+            max-width: 400px;
+          }
+        }
+
+        .resource-card {
+          box-shadow: $shadow-shallow;
+          transition: all 0.2s ease-in-out;
+          padding: $vert-spacing-sm $horiz-spacing-lg $vert-spacing-md;
+          border-radius: $radius-small;
+          border: 1px solid $color-off-white;
+          background: $color-off-white;
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          height: 100%;
+
+          &:hover {
+            box-shadow: $shadow-deep;
+            transform: translateY(-10px);
+          }
+        }
       }
+    }
 
-      h2 {
-        margin-bottom: 2rem;
-        color: #1d1d1f;
-        font-size: 36px;
+    .initials-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(
+        to bottom right,
+        $color-grey-dark,
+        $color-blue-dark
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      box-shadow: $shadow-deep;
+      @include cardAnimation;
 
-        @media only screen and (max-width: 779px) {
-          text-align: center;
+      span {
+        color: $color-off-white;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+
+    .info-container {
+      position: relative;
+      z-index: 2;
+
+      h3 {
+        margin: 55px auto 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.4;
+        @include cardAnimation;
+        color: $color-grey-dark;
+        text-decoration: none;
+
+        a {
         }
       }
 
-      .resource-card {
-        margin: 0 1.5rem 3rem 0;
-        width: 350px;
-        position: relative;
-
-        @media only screen and (max-width: 779px) {
-          text-align: center;
-          margin: 0 auto 2rem;
-        }
+      p {
+        font-size: 0.8rem;
+        color: $color-grey;
+        margin-bottom: 0;
+        @include cardAnimation;
       }
+    }
+
+    .flex-container .resource-card:hover {
+      border: 1px solid transparent;
+      overflow: hidden;
 
       .initials-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-bottom: 20px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        box-shadow: none;
 
-        @media only screen and (max-width: 779px) {
-          justify-content: center;
+        span {
+          font-size: 1.2rem;
+          position: absolute;
+          left: 1rem;
+          top: 1rem;
         }
       }
 
-      .initials-container span {
-        font-size: 30px;
-        font-weight: 700;
-        display: block;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: -webkit-linear-gradient(#4b90e2, #5beccb);
-        color: #fff;
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+      h3,
+      p {
+        color: $color-off-white;
       }
+    }
 
-      .resource-card h3 {
-        font-size: 22px;
-        margin-bottom: 10px;
+    .resource-section {
+      .resource-card {
+        &::after {
+          content: "";
+          position: absolute;
+          background-repeat: no-repeat;
+          width: 250px;
+          height: 120%;
+        }
       }
+    }
 
-      .resource-card h3 a {
-        text-decoration: none;
-        color: #2375d7;
+    .resource-section#accessibility {
+      padding-top: 1.5rem;
+      .resource-card {
+        &::after {
+          top: -20px;
+          right: -20px;
+          transform: rotate(5deg);
+          background-image: url("../../../images/card-backgrounds/accessibility-card-bg.png");
+        }
       }
+    }
 
-      .resource-card p {
-        font-size: 14px;
-        color: rgba(26, 27, 28, 0.6);
-        line-height: 1.5;
+    .resource-section#color {
+      .resource-card {
+        &::after {
+          top: -40px;
+          right: -30px;
+          transform: rotate(0);
+          background-image: url("../../../images/card-backgrounds/colors-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#design {
+      .resource-card {
+        &::after {
+          top: -30px;
+          right: -10px;
+          transform: rotate(4deg);
+          background-image: url("../../../images/card-backgrounds/design-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#fonts {
+      .resource-card {
+        &::after {
+          top: -40px;
+          right: -20px;
+          transform: rotate(3deg);
+          background-image: url("../../../images/card-backgrounds/fonts-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#images {
+      .resource-card {
+        &::after {
+          top: -20px;
+          right: -20px;
+          transform: rotate(2deg);
+          background-image: url("../../../images/card-backgrounds/images-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#inspiration {
+      .resource-card {
+        &::after {
+          top: -10px;
+          right: -120px;
+          transform: rotate(2deg);
+          background-image: url("../../../images/card-backgrounds/inspiration-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#learning {
+      .resource-card {
+        &::after {
+          top: 5px;
+          right: -45px;
+          transform: rotate(0);
+          background-image: url("../../../images/card-backgrounds/learning-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#miscellaneous {
+      .resource-card {
+        &::after {
+          top: -10px;
+          right: -15px;
+          transform: rotate(2deg);
+          background-image: url("../../../images/card-backgrounds/miscellaneous-card-bg.png");
+        }
+      }
+    }
+
+    .resource-section#tooling {
+      .resource-card {
+        &::after {
+          top: -10px;
+          right: -10px;
+          transform: rotate(5deg);
+          background-image: url("../../../images/card-backgrounds/tooling-card-bg.png");
+        }
       }
     }
   }

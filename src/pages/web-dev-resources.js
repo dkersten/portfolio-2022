@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 import Layout from "../components/layout"
+import WebResourcesHeader from "../components/resources-header"
 import ResourceCard from "../components/resource-card"
 
 // styling
@@ -14,63 +15,126 @@ const WebDevResources = () => {
             accessibilityResources: allContentfulDevResources(filter: {resourceCategory:{eq: "accessibility"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             colorResources: allContentfulDevResources(filter: {resourceCategory:{eq: "color"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             designResources: allContentfulDevResources(filter: {resourceCategory:{eq: "design"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             fontsResources: allContentfulDevResources(filter: {resourceCategory:{eq: "fonts"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             imagesResources: allContentfulDevResources(filter: {resourceCategory:{eq: "img"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             inspirationResources: allContentfulDevResources(filter: {resourceCategory:{eq: "inspiration"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             learningResources: allContentfulDevResources(filter: {resourceCategory:{eq: "learning"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             miscellaneousResources: allContentfulDevResources(filter: {resourceCategory:{eq: "misc"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
             toolingResources: allContentfulDevResources(filter: {resourceCategory:{eq: "tooling"}}) {
                 edges {
                     node {
-                        ...webResourcesFragment
+                        resourceName
+                        resourceUrl
+                        resourceAbbreviation
+                        resourceCategory
+                        resourceDescription {
+                            resourceDescription
+                        }
+                        id
                     }
                 }
             }
@@ -112,12 +176,7 @@ const WebDevResources = () => {
     return(
         <Layout>
             <div className="dev-resources">
-                <header>
-                    <div className="page-width">
-                        <h1>Web Dev Resources</h1>
-                        <p>A collection of various tools, resources, articles, and documentation I've come across while developing that I've found helpful and/or incorporated into my workflow.</p>
-                    </div>
-                </header>
+                <WebResourcesHeader />
                 <main>
                     { sectionJSX() }
                 </main>

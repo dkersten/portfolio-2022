@@ -9,15 +9,17 @@ const ResourceCard = (props) => {
     } = props
 
     return (
-        <div className="resource-card">
-            <div className="initials-container">
-                <span>{resourceAbbreviation}</span>
+        <a target="_blank" rel="noreferrer" href={url} aria-label={"Visit " + name + " (Opens in new tab)"}>
+            <div className="resource-card">
+                <div className="initials-container">
+                    <span>{resourceAbbreviation}</span>
+                </div>
+                <div className="info-container">
+                    <h3>{name}</h3>
+                    <p>{description.resourceDescription}</p>
+                </div>
             </div>
-            <div className="info-container">
-                <h3><a target="_blank" rel="noreferrer" href={url} aria-label={"Visit " + name + " (Opens in new tab)"}>{name}</a></h3>
-                <p>{description.resourceDescription}</p>
-            </div>
-        </div>
+        </a>
     )
 }
 

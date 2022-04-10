@@ -1,0 +1,48 @@
+// colors
+$color-blue-dark: #0c4379;
+$color-blue-bright: #1075ff;
+$color-grey-dark: #2c3743;
+$color-grey: #70767d;
+$color-grey-light: #e7eaf2;
+$color-off-white: #f7fafd;
+
+// spacing
+$vert-spacing-xs: 0.3rem;
+$vert-spacing-sm: 1rem;
+$vert-spacing-md: 1.5rem;
+$vert-spacing-lg: 2rem;
+$vert-spacing-xl: 3rem;
+$vert-spacing-xxl: 4.5rem;
+
+$horiz-spacing-xs: 0.15rem;
+$horiz-spacing-sm: 0.3rem;
+$horiz-spacing-md: 0.5rem;
+$horiz-spacing-lg: 1rem;
+$horiz-spacing-xl: 2rem;
+$horiz-spacing-xxl: 3rem;
+
+// shadows
+$shadow-shallow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+  rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+$shadow-deep: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+  rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+// border radiuses
+$radius-small: 6px;
+
+// mixins
+@mixin contentWidthNormal {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+}
+
+@mixin contentWidthNarrow {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+@mixin cardAnimation {
+  transition: all 0.25s ease-in-out;
+}
