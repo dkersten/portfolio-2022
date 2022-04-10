@@ -1,5 +1,6 @@
 # To Do
 - Add inspiration page and styling
+- Prevent indexing of inspiration page
 - Upload updated resume
 - Fix PDF download link
 - Update email
