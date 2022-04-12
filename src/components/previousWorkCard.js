@@ -10,7 +10,6 @@ const PreviousWorkCard = (props) => {
         projectDescription: description
     } = props
 
-    console.log(props)
     const img = getImage(image)
 
     return(
