@@ -7,50 +7,27 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
-
-// components
-// import Nav from "./nav"
-// import Banner from "./banner"
-// import About from "./about"
-// import Experience from "./experience"
-// import PreviousWork from "./previousWork"
-// import Resources from "./resources"
-// import Contact from "./contact"
+import {Helmet} from 'react-helmet'
+import Img from '../images/open-graph-img.png'
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   return (
+    <>
+    <Helmet>
+      <title>Dan Kersten's Portfolio</title>
+      <meta name='description' content="Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development." />
+      <meta property="og:title" content="Dan Kersten's Portfolio" />
+      <meta property="og:site_name" content="Daniel Kersten IO" />
+      <meta property="og:url" content="https://danielkersten.io" />
+      <meta property="og:description" content="Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={Img} />
+    </Helmet>
     <div>
     {children}
-      {/* <Nav />
-        <main className="main-content">
-          <Banner />
-          <About />
-          <Experience />
-          <PreviousWork />
-          <Resources />
-          <Contact />
-        </main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer> */}
     </div>
+    </>
   )
 }
 

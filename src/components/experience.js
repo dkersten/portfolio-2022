@@ -1,8 +1,7 @@
 import React, { useEffect } from "react"
 import Vivus from "vivus"
 import 'font-awesome/css/font-awesome.min.css'
-import resumePDF from '../assets/resume-september-2021.pdf'
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 const Experience = () => {
     useEffect(() => {
@@ -32,8 +31,7 @@ const Experience = () => {
                     <div className="left">
                         <p>I am currently employed as a Front End Engineer at Airtank, working on a variety of projects and platforms, ranging from our in-house ziftrshop ecommerce platform, to Vue/React and static site generators, to WordPress. Previously I worked as a web developer at Mainstreethost. You can see my full experience below.</p>
                         <div className="btn-container">
-                            {/* <a target="_blank" href={`resumePDF`}>My Resume</a> */}
-                            <Link to="../assets/resume-september-2021.pdf" download>Resume</Link>
+                            <a rel="noopener noreferrer" target="_blank" r href="https://docs.google.com/document/d/1AuFVbCGtgUtIg66feqz3ymPK2pXDt8XXyU_ho4F4rEo/">Resume</a>
                         </div>
                     </div>
                     <div className="right">
