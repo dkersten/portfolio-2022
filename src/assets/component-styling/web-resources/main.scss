@@ -107,15 +107,14 @@
         @include cardAnimation;
         color: $color-grey-dark;
         text-decoration: none;
-
-        a {
-        }
+        text-shadow: $text-shadow-white;
       }
 
       p {
         font-size: 0.8rem;
         color: $color-grey;
         margin-bottom: 0;
+        text-shadow: $text-shadow-white;
         @include cardAnimation;
       }
     }
@@ -143,6 +142,7 @@
       h3,
       p {
         color: $color-off-white;
+        text-shadow: none;
       }
     }
 

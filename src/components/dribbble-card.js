@@ -12,7 +12,8 @@ const DribbbleCard = (props) => {
         <a href={link} target="_blank" rel="noreferrer" aria-label={"Visit " + name + " (Opens in new tab)"} className="dribbble-card">
             <img 
                 src={image}
-                alt="Test"
+                alt={`Dribbble Shot: ${name} by ${author}`}
+                loading="lazy"
             />
             <div className="inner-container">
                 <h2>{name}</h2>
