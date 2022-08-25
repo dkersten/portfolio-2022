@@ -74,6 +74,7 @@ footer.contact {
     button {
       @include btn-default;
       border: none;
+      cursor: pointer;
     }
   }
 
