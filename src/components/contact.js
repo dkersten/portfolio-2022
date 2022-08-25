@@ -20,6 +20,8 @@ const Contact = () => {
                         <p>Want to work together? I am currently open to a frontend position or freelance work. You can reach me through the form below:</p>
                         <div className="form-container">
                             <form name="contact" method="POST" data-netlify="true">
+                                <input class="hidden" name="hpfield" />
+                                <input class="hidden" type="hidden" name="form-name" value="contact" />
                                 <p>
                                     <label>Name: <input type="text" name="name" /></label>
                                 </p>
@@ -29,6 +31,7 @@ const Contact = () => {
                                 <p>
                                     <label>Message: <textarea name="message"></textarea></label>
                                 </p>
+                                <div data-netlify-recaptcha="true"></div>
                                 <p>
                                     <button type="submit">Send</button>
                                 </p>
