@@ -8,10 +8,12 @@ module.exports = {
     description: `Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development.`,
     author: `Dan Kersten`,
     siteUrl: `https://danielkersten.io`,
+    siteImg: `./src/images/open-graph-img.png`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,7 +41,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/brackets-blue-primary.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

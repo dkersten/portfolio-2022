@@ -1,0 +1,57 @@
+@import "./config.scss";
+
+.dev-resources {
+  header {
+    text-align: center;
+    line-height: 1.6;
+    padding: $vert-spacing-xxl 0;
+
+    @media only screen and (max-width: 549px) {
+      padding: $vert-spacing-lg 0 $vert-spacing-md;
+    }
+
+    h1 {
+      color: $color-grey-dark;
+      margin: 0 auto $vert-spacing-lg;
+    }
+
+    p {
+      color: $color-grey;
+      margin: 0 auto $vert-spacing-lg;
+      @include contentWidthNarrow;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: $vert-spacing-md;
+      margin-bottom: 4px;
+
+      a {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3px);
+        }
+
+        .icon-container {
+          img {
+            max-height: 30px;
+          }
+        }
+
+        span {
+          color: $color-grey;
+          font-size: 0.8rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+  }
+}

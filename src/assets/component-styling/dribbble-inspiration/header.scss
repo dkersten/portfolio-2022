@@ -1,0 +1,13 @@
+@import "./config.scss";
+
+header.dribbble {
+  padding: 4rem 0;
+  text-align: center;
+  background: $color-pink;
+
+  h1 {
+    text-shadow: 1px 1px 2px #000;
+    color: $color-white;
+    margin-bottom: 0;
+  }
+}

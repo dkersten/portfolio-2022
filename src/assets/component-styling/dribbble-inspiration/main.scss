@@ -1,0 +1,86 @@
+@import "./config.scss";
+
+main.dribbble {
+  background: $color-black;
+  padding: 3rem 0;
+
+  .description {
+    margin-bottom: 3rem;
+    p {
+      color: $color-white;
+      @include dribbbleContentWidthNarrow;
+      text-align: center;
+      line-height: $para-lh;
+    }
+  }
+
+  .dribbble-card-container {
+    @include dribbbleContentWidthNormal;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2.5rem;
+    column-gap: 1rem;
+    justify-content: center;
+
+    @media only screen and (max-width: 1199px) {
+      column-gap: 1.5rem;
+    }
+
+    @media only screen and (max-width: 767px) {
+      column-gap: 2rem;
+    }
+
+    @media only screen and (max-width: 524px) {
+      column-gap: auto;
+    }
+  }
+
+  .dribbble-card {
+    text-decoration: none;
+    color: $color-white;
+    flex-basis: calc(25% - 1rem);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 8px;
+    background: $color-black-dark;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+
+    .inner-container {
+      padding: 1rem 1rem 3.25rem;
+
+      h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 0.5rem;
+        font-weight: 500;
+      }
+
+      span {
+        position: absolute;
+        left: 1rem;
+        bottom: 1.5rem;
+        font-size: 16px;
+      }
+    }
+    @media only screen and (max-width: 1199px) {
+      flex-basis: calc(33.333% - 1rem);
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-basis: calc(50% - 1rem);
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-basis: calc(100%);
+      max-width: 350px;
+    }
+  }
+}

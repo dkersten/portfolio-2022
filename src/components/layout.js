@@ -7,43 +7,26 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
-import "./layout.css"
+import {Helmet} from 'react-helmet'
+import Img from '../images/open-graph-img.png'
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+    <Helmet>
+      <title>Dan Kersten's Portfolio</title>
+      <meta name='description' content="Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development." />
+      <meta property="og:title" content="Dan Kersten's Portfolio" />
+      <meta property="og:site_name" content="Daniel Kersten IO" />
+      <meta property="og:url" content="https://danielkersten.io" />
+      <meta property="og:description" content="Hi, I'm Dan! I'm currently focused on front end development, design, and accessibility. I also dabble in back end development." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={Img} />
+    </Helmet>
+    <div>
+    {children}
+    </div>
     </>
   )
 }

@@ -1,0 +1,23 @@
+// Resize
+@import "./vendor/css-reset";
+
+// Base
+@import "./base/variables";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/mixins.scss";
+@import "./base/layout.scss";
+
+// Vendor
+@import "./vendor/flickity.scss";
+
+// Components
+@import "./component-styling/nav.scss";
+@import "./component-styling/main-content";
+@import "./component-styling/banner-section.scss";
+@import "./component-styling/previous-work-section.scss";
+@import "./component-styling/about-section.scss";
+@import "./component-styling/experience-section.scss";
+@import "./component-styling/previous-work-card.scss";
+@import "./component-styling/resources-section.scss";
+@import "./component-styling/contact-section.scss";

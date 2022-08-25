@@ -1,0 +1,132 @@
+section.experience {
+  margin-bottom: $vertical-spacing-xl;
+
+  .page-width {
+    position: relative;
+  }
+
+  svg.animate-svg {
+    position: absolute;
+    left: 85px;
+    top: -130px;
+    width: 350px;
+    height: 250px;
+    margin-left: 100px;
+    transform: rotate(-8deg);
+    stroke-width: 1.75;
+    stroke: $color-green-primary;
+    fill: none;
+
+    @media only screen and (max-width: 599px) {
+      top: -200px;
+      left: -60px;
+      transform: rotate(-25deg);
+    }
+
+    @media only screen and (max-width: 475px) {
+      height: 150px;
+      width: 210px;
+      top: -130px;
+      stroke-width: 2.75;
+    }
+  }
+
+  h2 {
+    color: $color-font-primary;
+    margin-bottom: $vertical-spacing-xs;
+    font-weight: 700;
+  }
+
+  .columns-container {
+    align-items: flex-start;
+
+    @media only screen and (max-width: 767px) {
+      .right {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1099px) {
+      .left {
+        padding-right: 2.5rem;
+      }
+
+      .right {
+        padding-left: 2.5rem;
+      }
+    }
+
+    @media only screen and (min-width: 1100px) {
+      .left {
+        padding-right: 4rem;
+      }
+
+      .right {
+        padding-left: 4rem;
+      }
+    }
+  }
+
+  .btn-container {
+    margin-top: $vertical-spacing-sm;
+
+    a {
+      @include btn-default;
+    }
+  }
+
+  .right {
+    p {
+      margin-bottom: $vertical-spacing-xs;
+    }
+
+    ul {
+      column-count: 2;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 899px) {
+      ul {
+        column-count: 1;
+      }
+    }
+
+    @media only screen and (min-width: 599px) and (max-width: 767px) {
+      ul {
+        column-count: 3;
+      }
+    }
+
+    @media only screen and (max-width: 399px) {
+      ul {
+        column-count: 1;
+      }
+    }
+  }
+
+  p,
+  li {
+    color: $color-font-secondary;
+    font-size: $font-size-xs;
+    line-height: 1.7;
+  }
+
+  li {
+    line-height: 2;
+
+    &::before {
+      content: "\f101";
+      font-family: "FontAwesome";
+      float: left;
+      left: -10px;
+      padding-right: 1rem;
+      top: 0px;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  section.experience {
+    margin-bottom: $vertical-spacing-md;
+  }
+}

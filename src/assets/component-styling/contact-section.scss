@@ -1,0 +1,122 @@
+footer.contact {
+  padding-bottom: $vertical-spacing-xl;
+
+  .center-container {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: $vertical-spacing-sm;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      font-size: $font-size-xxs;
+
+      input {
+        margin-top: .25rem;
+        align-items: flex-start;
+      }
+    }
+
+    input, textarea {
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: none;
+      padding-bottom: 3px;
+      background:
+      linear-gradient(
+        to left, 
+        $color-green-primary,
+        $color-green-secondary
+      )
+      left 
+      bottom  
+      no-repeat; 
+      background-size:100% 3px;
+      color: $color-font-secondary !important;
+      transition: all .2s ease-in-out;
+
+      &:hover, &:focus {
+        background:
+        linear-gradient(
+          to left, 
+          $color-green-secondary,
+          $color-green-primary
+        )
+        left 
+        bottom  
+        no-repeat; 
+        background-size:100% 3px;
+      }
+    }
+
+    input {
+      height: 30px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      @include btn-default;
+      border: none;
+    }
+  }
+
+  svg.svg-outline {
+    position: absolute;
+    left: 50%;
+    top: -29px;
+    transform: translateX(-50%);
+    stroke: $color-green-primary;
+    stroke-width: 4;
+  }
+
+  h2 {
+    color: $color-font-primary;
+    margin-bottom: $vertical-spacing-sm;
+    font-weight: 700;
+  }
+
+  p {
+    color: $color-font-secondary;
+    font-size: $font-size-xs;
+    line-height: 1.7;
+  }
+
+  .icon-container {
+    margin-top: $vertical-spacing-xxs;
+
+    a {
+      text-decoration: none;
+    }
+
+    svg {
+      max-width: 40px;
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      margin-bottom: 0.75rem;
+
+      @media only screen and (max-width: 399px) {
+        max-width: 32px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  footer.contact {
+    padding-bottom: $vertical-spacing-md;
+  }
+}
