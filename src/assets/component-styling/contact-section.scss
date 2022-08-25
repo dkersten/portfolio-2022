@@ -8,6 +8,70 @@ footer.contact {
     position: relative;
   }
 
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: $vertical-spacing-sm;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      font-size: $font-size-xxs;
+
+      input {
+        margin-top: .25rem;
+        align-items: flex-start;
+      }
+    }
+
+    input, textarea {
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: none;
+      padding-bottom: 3px;
+      background:
+      linear-gradient(
+        to left, 
+        $color-green-primary,
+        $color-green-secondary
+      )
+      left 
+      bottom  
+      no-repeat; 
+      background-size:100% 3px;
+      color: $color-font-secondary !important;
+      transition: all .2s ease-in-out;
+
+      &:hover, &:focus {
+        background:
+        linear-gradient(
+          to left, 
+          $color-green-secondary,
+          $color-green-primary
+        )
+        left 
+        bottom  
+        no-repeat; 
+        background-size:100% 3px;
+      }
+    }
+
+    input {
+      height: 30px;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      @include btn-default;
+      border: none;
+    }
+  }
+
   svg.svg-outline {
     position: absolute;
     left: 50%;
@@ -30,7 +94,7 @@ footer.contact {
   }
 
   .icon-container {
-    margin-top: $vertical-spacing-xs;
+    margin-top: $vertical-spacing-xxs;
 
     a {
       text-decoration: none;
